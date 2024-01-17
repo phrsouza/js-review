@@ -66,7 +66,7 @@ const data = [
     publicationDate: "1965-01-01",
     author: "Frank Herbert",
     genres: ["science fiction", "novel", "adventure"],
-    hasMovieAdaptation: true,
+    hasMovieAdaptation: false,
     pages: 658,
     translations: {
       spanish: "",
@@ -232,7 +232,7 @@ function getTotalReviewCount(book) {
 console.log(getTotalReviewCount(book));
 
 // Functional array methods
-// Map
+// Array.map
 doubles = [1, 2, 3, 4, 5].map((el) => el * 2);
 console.log(doubles);
 
@@ -246,3 +246,14 @@ const essentialData = books.map((book) => ({
   reviewsCount: getTotalReviewCount(book),
 }));
 console.log(essentialData);
+
+// Array.filter
+const longBooks = books
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation);
+console.log(longBooks);
+
+const adventureBooks = books
+  .filter((book) => book.genres.includes("adventure"))
+  .map((book) => book.title);
+console.log(adventureBooks);
