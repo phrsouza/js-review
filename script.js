@@ -181,11 +181,21 @@ const updatedBook = {
 };
 console.log(updatedBook);
 
+// Arrow functions
+
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
+
+const getYear = (str) => str.split("-")[0];
+
+console.log(getYear(publicationDate));
+
 // Template literals
 
-const summary = `${title}, a ${pages}-page long book, war written by ${author} and published at ${
-  publicationDate.split("-")[0]
-}. The book has${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
+const summary = `${title}, a ${pages}-page long book, war written by ${author} and published at ${getYear(
+  publicationDate
+)}. The book has${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
 console.log(summary);
 
 // Ternary operator
