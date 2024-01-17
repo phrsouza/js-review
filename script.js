@@ -261,3 +261,14 @@ console.log(adventureBooks);
 // Array.reduce
 const totalPages = books.reduce((acc, book) => acc + book.pages, 0);
 console.log(totalPages);
+
+// Array.sort - Mutates array
+const numbers = [3, 6, 1, 8, 10, 9];
+const sortedNumbers = numbers.slice().sort((a, b) => a - b);
+console.log(sortedNumbers);
+console.log(numbers);
+
+const sortedByPagesDesc = books
+  .sort((a, b) => b.pages - a.pages)
+  .map((book) => ({ title: book.title, pages: book.pages }));
+console.log(sortedByPagesDesc);
