@@ -298,3 +298,20 @@ console.log(booksAfterUpdate[0].title);
 fetch("https://jsonplaceholder.typicode.com/todos/1")
   .then((res) => res.json())
   .then((data) => console.log(data));
+console.log("Before get Todos");
+
+// Async/await
+
+async function getTodos() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  const data = await res.json();
+
+  console.log(data);
+
+  return data;
+}
+
+const todos = getTodos();
+console.log(todos);
+
+console.log("before get Todos again");
