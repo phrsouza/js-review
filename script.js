@@ -145,7 +145,7 @@ function getBook(id) {
 
 // Destructuring
 
-const book = getBook(2);
+const book = getBook(3);
 book;
 
 // const title = book.title;
@@ -218,5 +218,15 @@ const portugueseTranslation = book.translations.portuguese || "NOT TRANSLATED";
 portugueseTranslation;
 
 // Coalescing operator
-const totalReviews = book.reviews.librarything.reviewsCount ?? "no data";
+const totalReviews = book.reviews.goodreads.reviewsCount ?? "no data";
 totalReviews;
+
+// Optional chaining
+function getTotalReviewCount(book) {
+  const goodreads = book?.reviews?.goodreads?.reviewsCount ?? 0;
+  const librarything = book?.reviews?.librarything?.reviewsCount ?? 0;
+
+  return goodreads + librarything;
+}
+
+console.log(getTotalReviewCount(book));
