@@ -151,7 +151,8 @@ book;
 // const title = book.title;
 // const author = book.author;
 
-const { title, author, pages, publicationDate, genres } = book;
+const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
+  book;
 
 console.log(author, title, genres);
 
@@ -184,5 +185,10 @@ console.log(updatedBook);
 
 const summary = `${title}, a ${pages}-page long book, war written by ${author} and published at ${
   publicationDate.split("-")[0]
-}`;
+}. The book has${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
 console.log(summary);
+
+// Ternary operator
+
+const pagesRange = pages > 1000 ? "over a thousand" : "less than one thousand";
+console.log(`The book ${title} has ${pagesRange}`);
