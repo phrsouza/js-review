@@ -155,9 +155,11 @@ const { title, author, pages, publicationDate, genres } = book;
 
 console.log(author, title, genres);
 
+// Rest operator
+
 // const primaryGenre = genres[0];
 // const secondaryGenre = genres[1];
 
-const [primaryGenre, secondaryGenre] = genres;
+const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
 
-console.log(primaryGenre, secondaryGenre);
+console.log(primaryGenre, secondaryGenre, otherGenres);
