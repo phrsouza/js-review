@@ -145,7 +145,7 @@ function getBook(id) {
 
 // Destructuring
 
-const book = getBook(2);
+const book = getBook(1);
 book;
 
 // const title = book.title;
@@ -163,3 +163,19 @@ console.log(author, title, genres);
 const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
 
 console.log(primaryGenre, secondaryGenre, otherGenres);
+
+// Spread operator
+
+// const newGenres = [genres, "epic fantasy"];
+const newGenres = ["epic fantasy", ...genres];
+console.log(newGenres);
+
+// const updatedBook = { book, moviePublicationDate: "2022-12-19" };
+const updatedBook = {
+  ...book,
+  // Add new property
+  moviePublicationDate: "2022-12-19",
+  // Update property
+  pages: 666,
+};
+console.log(updatedBook);
