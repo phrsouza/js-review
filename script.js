@@ -293,3 +293,8 @@ const booksAfterUpdate = booksAfterDelete.map((book) =>
   book.id === 1 ? { ...book, title: "Foo Bar" } : book
 );
 console.log(booksAfterUpdate[0].title);
+
+// Promises
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
