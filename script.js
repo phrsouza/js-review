@@ -145,7 +145,7 @@ function getBook(id) {
 
 // Destructuring
 
-const book = getBook(1);
+const book = getBook(2);
 book;
 
 // const title = book.title;
@@ -202,3 +202,21 @@ console.log(summary);
 
 const pagesRange = pages > 1000 ? "over a thousand" : "less than one thousand";
 console.log(`The book ${title} has ${pagesRange}`);
+
+// Short circuit operators
+console.log(true && "Some text");
+console.log(false && "Some text");
+console.log(hasMovieAdaptation && "This book has a movie");
+
+// falsy: 0 '' null undefined
+console.log("something" && "some text");
+console.log(0 && "some text");
+console.log("something" || "some text");
+console.log(0 || "some text");
+
+const portugueseTranslation = book.translations.portuguese || "NOT TRANSLATED";
+portugueseTranslation;
+
+// Coalescing operator
+const totalReviews = book.reviews.librarything.reviewsCount ?? "no data";
+totalReviews;
