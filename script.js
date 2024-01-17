@@ -230,3 +230,19 @@ function getTotalReviewCount(book) {
 }
 
 console.log(getTotalReviewCount(book));
+
+// Functional array methods
+// Map
+doubles = [1, 2, 3, 4, 5].map((el) => el * 2);
+console.log(doubles);
+
+const books = getBooks();
+const titles = books.map((book) => book.title);
+console.log(titles);
+
+const essentialData = books.map((book) => ({
+  author: book.author,
+  title: book.title,
+  reviewsCount: getTotalReviewCount(book),
+}));
+console.log(essentialData);
