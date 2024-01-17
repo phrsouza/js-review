@@ -179,3 +179,10 @@ const updatedBook = {
   pages: 666,
 };
 console.log(updatedBook);
+
+// Template literals
+
+const summary = `${title}, a ${pages}-page long book, war written by ${author} and published at ${
+  publicationDate.split("-")[0]
+}`;
+console.log(summary);
